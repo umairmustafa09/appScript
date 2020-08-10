@@ -3,7 +3,7 @@ function onOpen(){
 }
 
 function createPDF(){
-	let copyFile = DriveApp.getFileById('15Ur9cpI52BkAq71pSo2oBSML1a3Z-3BE_G9ACJVU9E4').makeCopy(),
+	let copyFile = DriveApp.getFileById('enter google sheet id here').makeCopy(),
         copyID = copyFile.getId(),
         copyDoc = DocumentApp.openById(copyID),
         copyBody = copyDoc.getBody()
@@ -24,7 +24,7 @@ function createPDF(){
   
   copyDoc.saveAndClose()
 
-  let desintation = DriveApp.getFolderById('1toJJC-o7_WCV01x-oiNIflRiTJcuDkyI')
+  let desintation = DriveApp.getFolderById('enter google folder id here')
   let  newFile = desintation.createFile(copyDoc.getAs('application/PDF'))
   
   newFile.setName(activeRow[0][0] + ' '  + 'Paid Fee challan for Month August 2020')
